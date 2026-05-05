@@ -1,0 +1,101 @@
+.page {
+  min-height: 100vh;
+  background: #0a1628;
+  box-sizing: border-box;
+}
+
+.nav-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 22, 40, 0.95);
+  border-bottom: 1rpx solid rgba(168, 216, 234, 0.2);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  padding: 0 24rpx;
+}
+.nav-back {
+  display: flex;
+  align-items: center;
+  color: #A8D8EA;
+  font-size: 30rpx;
+}
+.nav-back-arrow { font-size: 40rpx; line-height: 1; }
+.nav-back-text { margin-left: 4rpx; }
+.nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #A8D8EA;
+}
+.nav-placeholder { flex-shrink: 0; }
+
+.content {
+  padding: 24rpx 32rpx 80rpx;
+}
+
+.tip {
+  color: rgba(168, 216, 234, 0.9);
+  font-size: 24rpx;
+  line-height: 1.5;
+  margin-bottom: 32rpx;
+  padding: 20rpx;
+  background: rgba(168, 216, 234, 0.08);
+  border-radius: 12rpx;
+}
+
+.album-block {
+  margin-bottom: 36rpx;
+  padding: 24rpx;
+  background: rgba(168, 216, 234, 0.06);
+  border: 1rpx solid rgba(168, 216, 234, 0.2);
+  border-radius: 16rpx;
+}
+
+.album-head {
+  color: #A8D8EA;
+  font-size: 30rpx;
+  font-weight: 500;
+  margin-bottom: 16rpx;
+}
+
+.album-row {
+  margin-bottom: 12rpx;
+}
+.album-row .label {
+  color: rgba(168, 216, 234, 0.85);
+  font-size: 26rpx;
+}
+.album-row .value {
+  color: #A8D8EA;
+  font-size: 26rpx;
+  margin-left: 12rpx;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 160rpx;
+  margin-top: 8rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1rpx solid rgba(168, 216, 234, 0.25);
+  border-radius: 12rpx;
+  color: #A8D8EA;
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+
+.btn-import {
+  margin-top: 48rpx;
+  background: linear-gradient(135deg, rgba(168, 216, 234, 0.35), rgba(168, 216, 234, 0.2));
+  color: #A8D8EA;
+  border: 1rpx solid rgba(168, 216, 234, 0.5);
+  border-radius: 48rpx;
+  font-size: 30rpx;
+}

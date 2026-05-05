@@ -1,0 +1,14 @@
+<!--index.wxml - 首页（双阶段打字机 + 雾蒙蒙转场 + 开始按钮）-->
+<view class="page">
+  <view class="bg-image-wrap">
+    <image class="bg-image bg-stack" src="{{bg1}}" mode="aspectFit" lazy-load="{{false}}" style="opacity: {{isSecondPhase ? 0 : 1}}; z-index: {{isSecondPhase ? 0 : 1}};" />
+    <image class="bg-image bg-stack" src="{{bg2}}" mode="aspectFit" lazy-load="{{false}}" style="opacity: {{isSecondPhase ? 1 : 0}}; z-index: {{isSecondPhase ? 1 : 0}};" />
+  </view>
+  <view class="fog-overlay" style="opacity: {{overlayOpacity}};"></view>
+  <view class="typewriter-wrap {{isSecondPhase ? 'typewriter-wrap-bottom-left' : ''}}">
+    <text class="typewriter-text typewriter-text-kaiti">{{displayText}}</text>
+  </view>
+  <view class="start-btn-wrap" wx:if="{{showStartButton}}">
+    <view class="start-btn" bindtap="onStartTap">开始</view>
+  </view>
+</view>

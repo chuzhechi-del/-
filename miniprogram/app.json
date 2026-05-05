@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/albumEdit/albumEdit",
+    "pages/albumList/albumList",
+    "pages/albumDetail/albumDetail",
+    "pages/albumTimeline/albumTimeline",
+    "pages/albumImport/albumImport",
+    "pages/album2015/album2015",
+    "pages/album2016/album2016",
+    "pages/album2017/album2017",
+    "pages/album2018/album2018",
+    "pages/album2019/album2019"
+  ],
+  "window": {
+    "backgroundColor": "#0a1628",
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

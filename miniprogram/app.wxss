@@ -1,0 +1,14 @@
+/* 全局字体：演示魁本楷书（本地打包字体，放在 miniprogram/fonts/ 目录下） */
+@font-face {
+  font-family: "DemoKaiShu";
+  /* app.wxss 与 fonts 在同一层级，因此使用相对路径 ./fonts/xxx.ttf */
+  src: url("./fonts/演示魁本楷书.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 全局默认字体（字体实际加载由 wx.loadFontFace 完成） */
+page {
+  font-family: "DemoKaiShu", sans-serif;
+}
+

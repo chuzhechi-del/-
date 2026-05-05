@@ -1,0 +1,49 @@
+<view class="page">
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-inner">
+      <view class="nav-back" bind:tap="onBack">
+        <text class="nav-back-arrow">‹</text>
+        <text class="nav-back-text"> 返回</text>
+      </view>
+      <view class="nav-title">创建相册</view>
+      <view class="nav-placeholder"></view>
+    </view>
+  </view>
+  <view class="section add-image-section">
+    <view class="row-label">
+      <text class="icon">🖼</text>
+      <text class="label">添加图片</text>
+    </view>
+    <view class="add-box" bind:tap="choosePhotos">
+      <text class="add-plus">+</text>
+    </view>
+    <view class="thumbs" wx:if="{{photos.length > 0}}">
+      <view class="thumb-wrap" wx:for="{{photos}}" wx:key="index">
+        <image class="thumb-img" src="{{item.tempFilePath || item}}" mode="aspectFill" />
+        <view class="thumb-remove" data-index="{{index}}" catch:tap="removePhoto">×</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="row-label">
+      <text class="icon">✏️</text>
+      <text class="label">相册名</text>
+      <text class="hint">不得超过10个字</text>
+    </view>
+    <input class="input" placeholder="请输入相册名" value="{{albumName}}" maxlength="10" bindinput="onAlbumNameInput" />
+  </view>
+
+  <view class="section">
+    <picker mode="date" value="{{albumDate}}" bindchange="onDateChange">
+      <view class="row-label row-tap">
+        <text class="icon">📅</text>
+        <text class="label">拍摄日期</text>
+        <text class="date-value">{{dateDisplay}}</text>
+        <text class="chevron">›</text>
+      </view>
+    </picker>
+  </view>
+
+  <button class="confirm-btn" bind:tap="saveAlbum" disabled="{{uploading}}">{{uploading ? '上传中…' : '确定'}}</button>
+</view>

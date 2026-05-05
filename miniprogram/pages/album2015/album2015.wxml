@@ -1,0 +1,25 @@
+<view class="page">
+  <view class="bg-image-wrap">
+    <image class="bg-image" src="{{bgSrc}}" mode="scaleToFill" />
+  </view>
+  <view class="fog-overlay"></view>
+
+  <view class="back-text" bindtap="onBackTap">‹ 返回</view>
+
+  <view class="album-grid">
+    <view class="album-grid-inner">
+      <view
+        class="album-item"
+        wx:for="{{albumItems}}"
+        wx:for-item="item"
+        wx:for-index="idx"
+        wx:key="idx"
+        bindtap="onPhotoTap"
+        data-fileid="{{item.fileId}}"
+      >
+        <image class="album-image" lazy-load="{{false}}" mode="aspectFill" src="{{item.src}}" />
+        <text class="album-label">{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+</view>

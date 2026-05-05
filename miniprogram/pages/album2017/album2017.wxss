@@ -1,0 +1,95 @@
+.page {
+  min-height: 100vh;
+  background: #0a1628;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.bg-image-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 白色半透明蒙版，让背景不那么清晰（与其他页保持一致） */
+.fog-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+/* 左上角返回文字按钮 */
+.back-text {
+  position: fixed;
+  left: 32rpx;
+  top: 80rpx;
+  z-index: 3;
+  font-size: 30rpx;
+  color: #555;
+  padding: 8rpx 16rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* 中间区域：网格整体垂直水平居中 */
+.album-grid {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 0 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.album-grid-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 24rpx;
+  grid-column-gap: 32rpx;
+}
+
+.album-item {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+}
+
+.album-image {
+  width: 100%;
+  height: 140rpx;
+  background: #e8eaed;
+}
+
+.album-label {
+  padding: 8rpx 16rpx 12rpx;
+  font-size: 24rpx;
+  color: #333;
+  font-weight: 700;
+  font-family: "Heiti SC", "SimHei", "STHeiti", "黑体", sans-serif;
+  text-align: center;
+  letter-spacing: 2rpx;
+}
+

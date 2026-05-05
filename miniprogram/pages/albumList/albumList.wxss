@@ -1,0 +1,50 @@
+.page {
+  min-height: 100vh;
+  background: #0a1628;
+  padding: 24rpx;
+  padding-bottom: 160rpx;
+  box-sizing: border-box;
+}
+.loading-tip {
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 80rpx 0;
+  font-size: 28rpx;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+.album-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16rpx;
+  padding: 28rpx;
+  border: 1rpx solid rgba(255,255,255,0.15);
+}
+.album-card .date {
+  color: #fff;
+  font-size: 30rpx;
+  margin-bottom: 8rpx;
+}
+.album-card .count {
+  color: rgba(255,255,255,0.6);
+  font-size: 24rpx;
+}
+.empty {
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 80rpx 0;
+  font-size: 28rpx;
+}
+.fab {
+  position: fixed;
+  right: 32rpx;
+  bottom: 80rpx;
+  background: linear-gradient(135deg, #4a6fa5, #2d4a6f);
+  color: #fff;
+  padding: 24rpx 32rpx;
+  border-radius: 48rpx;
+  font-size: 28rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.3);
+}

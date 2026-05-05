@@ -1,0 +1,118 @@
+/* 首页 - 底图 + 打字机 + 雾蒙蒙 + 开始按钮 */
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.bg-image-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* 与 .page 一致，aspectFit 留白边时填充纯白色 */
+  background: #ffffff;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 双背景叠放：进入页面即同时请求两张图，切换阶段只改透明度，不替换 src */
+.bg-image.bg-stack {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.45s ease;
+}
+
+/* 白色雾蒙蒙转场层 */
+.fog-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.92);
+  pointer-events: none;
+}
+
+/* 打字机诗文区域：第一屏居中，第二屏左下角 */
+.typewriter-wrap {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80rpx 48rpx;
+  padding-bottom: 200rpx;
+  box-sizing: border-box;
+  /* 第一屏：在 -74rpx 基础上再略下移 */
+  transform: translateY(-40rpx);
+}
+
+.typewriter-wrap-bottom-left {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-left: 48rpx;
+  padding-right: 48rpx;
+  padding-bottom: calc(200rpx + env(safe-area-inset-bottom));
+  /* 第二屏左下角文案；正数下移，较上一版约下移一行（≈34rpx×1.6） */
+  transform: translateY(104rpx);
+}
+
+.typewriter-text {
+  display: inline;
+  color: #000;
+  font-size: 34rpx;
+  line-height: 1.6;
+  white-space: pre-line;
+  letter-spacing: 4rpx;
+  font-family: "STKaiti", "KaiTi", "楷体", "STXingkai", "华文行楷", "FangSong", "仿宋", "STFangsong", "LiSu", "隶书", serif;
+}
+
+/* 第一屏诗句：固定楷体 */
+.typewriter-text-kaiti {
+  font-family: "DemoKaiShu", "KaiTi", "STKaiti", "楷体", serif;
+}
+
+/* 最右下角「开始」按钮：圆角矩形液态玻璃 + 跳动；bottom 略大以免落在底图与留白缝隙 */
+.start-btn-wrap {
+  position: fixed;
+  right: 16rpx;
+  bottom: 110rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 10;
+}
+
+.start-btn {
+  padding: 18rpx 40rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.28);
+  border: 2rpx solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.12), inset 0 2rpx 0 rgba(255, 255, 255, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a4334; /* 墨绿 */
+  font-size: 34rpx;
+  font-weight: 700;
+  letter-spacing: 6rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.25);
+  animation: btn-jump 1.6s ease-in-out infinite;
+}
+
+@keyframes btn-jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12rpx); }
+}

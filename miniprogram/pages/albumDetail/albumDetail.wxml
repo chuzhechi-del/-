@@ -1,0 +1,11 @@
+<view class="page">
+  <block wx:if="{{album}}">
+    <view class="date-bar">{{album.dateLabel || album.date}}</view>
+    <view class="photos" wx:if="{{!loading}}">
+      <view class="photo-wrap" wx:for="{{photoUrls}}" wx:key="index">
+        <image class="photo" src="{{item}}" mode="aspectFill" />
+      </view>
+    </view>
+    <view class="loading" wx:else>加载中…</view>
+  </block>
+</view>

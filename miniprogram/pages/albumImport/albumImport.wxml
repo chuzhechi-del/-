@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-inner" style="height: {{menuButton.height}}px;">
+      <view class="nav-back" bind:tap="onBack">
+        <text class="nav-back-arrow">‹</text>
+        <text class="nav-back-text"> 返回</text>
+      </view>
+      <view class="nav-title">导入云存储相册</view>
+      <view class="nav-placeholder" style="width: {{menuButton.width}}px;"></view>
+    </view>
+  </view>
+
+  <view class="content" style="padding-top: {{statusBarHeight + menuButton.height + 24}}px;">
+    <view class="tip">在云存储控制台打开每个文件夹，复制每张图片的 fileID（cloud:// 开头），每行粘贴一个。</view>
+
+    <view class="album-block" wx:for="{{albums}}" wx:key="year">
+      <view class="album-head">{{item.name}}</view>
+      <view class="album-row">
+        <text class="label">年份</text>
+        <text class="value">{{item.year}}</text>
+      </view>
+      <view class="album-row">
+        <text class="label">fileID 列表（每行一个）</text>
+      </view>
+      <textarea
+        class="textarea"
+        placeholder="cloud://xxx/albums/2015级毕业照/0.jpg"
+        value="{{item.fileIdsText}}"
+        data-index="{{index}}"
+        bindinput="onFileIdsInput"
+      />
+    </view>
+
+    <button class="btn-import" bind:tap="onImport" disabled="{{saving}}">
+      {{saving ? '处理中…' : '删除原始相册(含图片)并导入2015-2019级毕业照'}}
+    </button>
+  </view>
+</view>
